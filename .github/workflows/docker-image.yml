@@ -29,10 +29,10 @@ jobs:
     - name: docker push
       run: docker push lordagam/github-repo:latest
       
- #   - Test:
- #     needs: Build
- #     runs-on: ubuntu-latest
- #     steps:
+    - Test:
+      needs: Build
+      runs-on: ubuntu-latest
+      steps:
     
     - name: run & test Container
       run: docker run -itd --name python-hello -p 8080   my-image-name:latest
