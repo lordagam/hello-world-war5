@@ -26,7 +26,8 @@ jobs:
   deploy:
     environment:
       name: hello-world-war5
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://lordagam.github.io/hello-world-war5
+     # url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
