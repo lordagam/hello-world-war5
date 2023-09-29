@@ -55,10 +55,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: docker push
       run: docker push lordagam/github-repo-hello-world-war5:latest
-      run: docker run -itd --name war-tomer-and-jo -p 80:8080 github-repo-hello-world-war5
+   #   run: docker run -itd --name war-tomer-and-jo -p 80:8080 github-repo-hello-world-war5
    # - name: Build the Docker image
    #   run: docker build . --file Dockerfile --tag my-image-name:latest
    # - name: run & test Container
-      run: docker run -itd --name war-tomer-and-jo -p 80:8080 github-repo-hello-world-war5
-    - run: sleep 30 && curl http://127.0.0.1:8080/hello-world-war5/;
+   #   run: docker run -itd --name war-tomer-and-jo -p 80:8080 github-repo-hello-world-war5
+   # - run: sleep 30 && curl http://127.0.0.1:8080/hello-world-war5/;
     
