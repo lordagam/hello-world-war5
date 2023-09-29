@@ -37,7 +37,7 @@ jobs:
     - run: mkdir staging && cp target/*.war hello-world-war5 
     - uses: actions/upload-artifact@v3
       with:
-        name: Package
+        name: hello-world-war5
         path: hello-world-war5
     - uses: actions/checkout@v3
     - name: Build the Docker image
