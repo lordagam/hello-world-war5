@@ -34,8 +34,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - run: mvn --batch-mode --update-snapshots verify
-    - run: mkdir staging && cp target/*.war staging
+    - run: mkdir staging && cp target/*.war hello-world-war5 
     - uses: actions/upload-artifact@v3
       with:
         name: Package
-        path: staging
+        path: hello-world-war5
+    - name: test with Maven
+      run: sleep 30 && curl -f http://127.0.0.1:8080/hello-world-war5/; 
+      
