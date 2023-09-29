@@ -39,6 +39,9 @@ jobs:
       with:
         name: Package
         path: hello-world-war5
-    - name: test with Maven
-      run: sleep 30 && curl -f http://127.0.0.1:8080/hello-world-war5/; 
-      
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:latest
+    - name: run & test Container
+      run: docker run -itd --name war-tomer-and-jo -p 80:8080 my-image-name:latest
+    - run: sleep 30 && curl http://127.0.0.1:8080/hello-world-war5/;
+    
